@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 
-function Form() {
+function Form({ setList }) {
   const [ingredient, setIngredient] = useState("");
   const [data, setData] = useState([]);
 
   const handleChange = (event) => {
     setIngredient(event.target.value);
   };
+  //if user types at least 2 letters of item, fetch suggestions from API
   useEffect(() => {
     if (ingredient.length >= 2) {
       fetch(`https://api.frontendeval.com/fake/food/${ingredient}`)
@@ -21,9 +22,10 @@ function Form() {
   }, [ingredient]);
 
   return (
-    <div>
+    <div className={styles.out}>
       <h1>My shopping list:</h1>
-      <form>
+
+      <form className={styles.form}>
         <input
           type="text"
           id="name"
@@ -33,11 +35,20 @@ function Form() {
         ></input>
         <button>Search</button>
       </form>
+
       <ul className={styles.suggestionList}>
         {data.map((x, i) => {
+          //clicking on a suggestion adds item to the shopping list, clears out input & other suggestions
+          const onClick = () => {
+            setList((oldArray) => [...oldArray, x]);
+            setData([]);
+            setIngredient("");
+          };
           return (
             <li key={i}>
-              <button className={styles.suggestion}>{x}</button>
+              <button className={styles.suggestion} onClick={onClick}>
+                {x}
+              </button>
             </li>
           );
         })}
