@@ -1,0 +1,19 @@
+.outter {
+  display: flex;
+  width: 100%;
+  font-size: 1.1em;
+}
+.wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.deleteButton {
+  color: rgb(244, 71, 71);
+}

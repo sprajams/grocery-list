@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "./components/Form";
+import List from "./components/List";
 import "./App.scss";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="outer">
       <div>
         <Form setList={setList} />
+        <List list={list} />
       </div>
     </div>
   );
