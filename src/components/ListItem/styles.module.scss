@@ -1,7 +1,8 @@
 .outter {
   display: flex;
   width: 100%;
-  font-size: 1.1em;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 .wrapper {
   flex-grow: 1;
@@ -10,10 +11,29 @@
 }
 .button {
   background: inherit;
-  border: none;
+  color: inherit;
   cursor: pointer;
-  padding: 5px 10px;
+  //   padding: 5px 10px;
+}
+.checkButton {
+  border: 1px solid rgb(36, 168, 7);
+  border-radius: 50%;
+  font-size: 0.9em;
+  margin-right: 10px;
+  color: inherit;
 }
 .deleteButton {
+  border: none;
   color: rgb(244, 71, 71);
+}
+.strike {
+  text-decoration: line-through;
+}
+.disabled,
+.disabled .deleteButton,
+.disabled .checkButton {
+  color: rgb(182, 182, 182);
+}
+.disabled .checkButton {
+  border: 1px solid rgb(255, 255, 255);
 }
