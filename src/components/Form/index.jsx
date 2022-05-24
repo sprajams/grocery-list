@@ -21,6 +21,13 @@ function Form({ setList }) {
     }
   }, [ingredient]);
 
+  //allows user to add ingredients to their shopping list not found in suggestions, clear out input
+  const addItem = (e) => {
+    e.preventDefault();
+    setList((oldArray) => [...oldArray, ingredient]);
+    setIngredient("");
+  };
+
   return (
     <div className={styles.out}>
       <h1>My shopping list:</h1>
@@ -33,7 +40,7 @@ function Form({ setList }) {
           onChange={handleChange}
           className={styles.input}
         ></input>
-        <button>Search</button>
+        <button onClick={addItem}>Add</button>
       </form>
 
       <ul className={styles.suggestionList}>
