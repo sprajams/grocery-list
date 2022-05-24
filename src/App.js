@@ -5,12 +5,22 @@ import "./App.scss";
 
 function App() {
   const [list, setList] = useState([]);
-  console.log(list, "list");
+
+  // function to allow user to delete item from the list
+  const toDelete = (index) => {
+    setList((curr) => {
+      // Clone array to avoid directly mutating state variable
+      const cloned = [...curr];
+      // Do what you need to cloned
+      cloned.splice(index, 1);
+      return cloned;
+    });
+  };
   return (
     <div className="outer">
       <div>
         <Form setList={setList} />
-        <List list={list} />
+        <List list={list} toDelete={toDelete} />
       </div>
     </div>
   );

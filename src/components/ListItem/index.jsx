@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
-function ListItem({ item, toDelete }) {
+function ListItem({ item, toDelete, index }) {
   const [check, setCheck] = useState(false);
 
   return (
@@ -11,6 +11,7 @@ function ListItem({ item, toDelete }) {
       <div className={styles.wrapper}>
         <button
           className={`${styles.button} ${styles.checkButton}`}
+          // user can click to cross out and disable/gray out the item
           onClick={() => {
             setCheck(!check);
           }}
@@ -21,7 +22,9 @@ function ListItem({ item, toDelete }) {
       </div>
       <button
         className={`${styles.button} ${styles.deleteButton}`}
-        onClick={toDelete}
+        onClick={() => {
+          toDelete(index);
+        }}
       >
         x
       </button>
