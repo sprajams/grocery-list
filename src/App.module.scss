@@ -60,3 +60,11 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+.outer {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

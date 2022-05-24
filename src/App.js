@@ -1,12 +1,12 @@
-import Debounce from "./components/Debounce";
 import Form from "./components/Form";
-import styles from "./App.scss";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <div className={styles.App}>
-      <Debounce />
-      <Form />
+    <div className={styles.outer}>
+      <div>
+        <Form />
+      </div>
     </div>
   );
 }

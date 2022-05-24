@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./styles.module.scss";
 
 function Form() {
   const [ingredient, setIngredient] = useState("");
@@ -28,12 +29,17 @@ function Form() {
           id="name"
           value={ingredient}
           onChange={handleChange}
+          className={styles.input}
         ></input>
         <button>Search</button>
       </form>
-      <ul>
+      <ul className={styles.suggestionList}>
         {data.map((x, i) => {
-          return <li key={i}>{x}</li>;
+          return (
+            <li key={i}>
+              <button className={styles.suggestion}>{x}</button>
+            </li>
+          );
         })}
       </ul>
     </div>
