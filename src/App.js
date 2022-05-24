@@ -1,9 +1,9 @@
 import Form from "./components/Form";
-import styles from "./App.module.scss";
+import "./App.scss";
 
 function App() {
   return (
-    <div className={styles.outer}>
+    <div className="outer">
       <div>
         <Form />
       </div>
