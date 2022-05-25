@@ -3,29 +3,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.2em;
 }
 
 .form {
-  max-width: 400px;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  padding: 10px 0;
 }
 
 .input {
   padding: 5px 10px;
   flex-grow: 1;
+  border: 1px solid rgb(163, 163, 163);
+  border-right: none;
 }
 .input,
 .suggestionList {
   width: 100%;
 }
 .suggestionList {
+  position: absolute;
   max-width: 400px;
   list-style: none;
   padding: 0;
   cursor: pointer;
+  max-height: 300px;
+  overflow: scroll;
+  z-index: 1;
+  background-color: rgb(242, 242, 242);
+}
+.suggestionListOutlined {
+  border: 1px solid rgb(163, 163, 163);
+  border-top: none;
 }
 .suggestion {
   background: inherit;
@@ -36,5 +45,17 @@
   width: 100%;
 }
 .suggestion:hover {
-  background: rgb(233, 233, 233);
+  background: rgb(218, 237, 212);
+}
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+}
+.addBtn {
+  width: 50px;
+  background: rgb(180, 236, 186);
+  border: none;
+  font-size: 0.8em;
 }
