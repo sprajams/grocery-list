@@ -15,12 +15,8 @@
   padding: 5px 10px;
   flex-grow: 1;
   border: 1px solid rgb(163, 163, 163);
-  border-right: none;
 }
-.input,
-.suggestionList {
-  width: 100%;
-}
+
 .suggestionList {
   position: absolute;
   max-width: 400px;
@@ -30,6 +26,7 @@
   max-height: 300px;
   overflow: scroll;
   z-index: 1;
+  width: 100%;
   background-color: rgb(242, 242, 242);
 }
 .suggestionListOutlined {
@@ -52,10 +49,4 @@
   width: 100%;
   max-width: 400px;
   margin: 10px auto;
-}
-.addBtn {
-  width: 50px;
-  background: rgb(180, 236, 186);
-  border: none;
-  font-size: 0.8em;
 }

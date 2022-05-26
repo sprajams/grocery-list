@@ -24,8 +24,10 @@ function Form({ setList }) {
   //allows user to add ingredients to their shopping list not found in suggestions, clear out input
   const addItem = (e) => {
     e.preventDefault();
-    setList((oldArray) => [...oldArray, ingredient]);
-    setIngredient("");
+    if (ingredient.length > 1) {
+      setList((oldArray) => [...oldArray, ingredient]);
+      setIngredient("");
+    }
   };
 
   return (
@@ -33,7 +35,7 @@ function Form({ setList }) {
       <h1>My shopping list:</h1>
 
       <div className={styles.wrap}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={addItem}>
           <input
             type="text"
             id="name"
@@ -41,9 +43,6 @@ function Form({ setList }) {
             onChange={handleChange}
             className={styles.input}
           ></input>
-          <button onClick={addItem} className={styles.addBtn}>
-            Add
-          </button>
         </form>
 
         <ul
