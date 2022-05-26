@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 function List({ list, toDelete }) {
   return (
     <div className={styles.outter}>
-      <div>List:</div>
+      <div className={styles.title}>List:</div>
       <ul className={styles.list}>
         {list.map((elem, i) => {
           return (
